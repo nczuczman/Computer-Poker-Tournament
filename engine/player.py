@@ -1,9 +1,13 @@
 class Player:
-    def __init__(self, name, brain):
+    def __init__(self, name, brain, starting_stack):
+        self.wins = 0
         self.name = name
-        self.brain = brain
+        if isinstance(brain, type):
+            self.brain = brain()  # Instantiate it
+        else:
+            self.brain = brain
         self.hand = []
-        self.stack = 1000
+        self.stack = starting_stack
         self.bet = 0
         self.action = None
         self.position = None
@@ -12,43 +16,8 @@ class Player:
         self.is_folded = False
         self.is_sitting_out = False
 
-    
-    def execute_action(self, action_dict):
-
-        action = action_dict.get("action")
-        amount = action_dict.get("amount", 0)
-
-        if action == "call":
-            return self.call(amount)
-
-        elif action == "raise":
-            return self.raise_bet(amount)
-
-        elif action == "fold":
-            return self.fold()
-
-        elif action == "check":
-            return self.check()
-
-        else:
-            raise ValueError(f"Unknown action: {action}")
 
 
-    def call(self, amount):
-        self.stack -= amount
-        self.bet += amount
-        return amount
-    
-    def raise_bet(self, amount):
-        self.stack -= amount
-        self.bet += amount
-        return amount
-    
-    def fold(self):
-        self.is_active = False
-        self.is_folded = True
-        return True
-    
-    def check(self):
-        return True
+    def get_action(self, game_state):
+        return self.brain.get_action(game_state)
     

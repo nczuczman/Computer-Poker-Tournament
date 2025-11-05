@@ -1,0 +1,62 @@
+{
+    "player": {
+        "name": "Example",
+        "hand": [
+            16795671,
+            2131213
+        ],
+        "stack": 2490,
+        "current_bet": 10,
+        "position": 0,
+        "is_button": true,
+        "is_small_blind": true,
+        "is_big_blind": false
+    },
+    "community_cards": [],
+    "num_community_cards": 0,
+    "pot": 270,
+    "current_bet": 120,
+    "amount_to_call": 110,
+    "pot_odds": 0.2894736842105263,
+    "street": "pre-flop",
+    "small_blind": 10,
+    "big_blind": 20,
+    "ante": 0,
+    "hand_number": 1,
+    "button_position": 0,
+    "num_players": 4,
+    "num_active_players": 4,
+    "opponents": [
+        {
+            "name": "Jared",
+            "stack": 2480,
+            "current_bet": 20,
+            "is_active": true,
+            "position": 1,
+            "is_all_in": false
+        },
+        {
+            "name": "Noah",
+            "stack": 2380,
+            "current_bet": 120,
+            "is_active": true,
+            "position": 2,
+            "is_all_in": false
+        },
+        {
+            "name": "James",
+            "stack": 2380,
+            "current_bet": 120,
+            "is_active": true,
+            "position": 3,
+            "is_all_in": false
+        }
+    ],
+    "valid_actions": [
+        "fold",
+        "call",
+        "raise"
+    ],
+    "min_raise": 240,
+    "max_raise": 2490
+}

@@ -1,7 +1,11 @@
 class Brain:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self):
+        pass
     
     def get_action(self, game_state):
-        return {"action": "call", "amount":0}
+        """
+        Must be implemented by subclasses.
+        Returns a dict with 'action' key and optional 'amount' key.
+        """
+        raise NotImplementedError("Subclasses must implement get_action()")
 
